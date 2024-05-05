@@ -8,6 +8,7 @@ import mongoose from "mongoose";
 import userRoute from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
+import listingRouter from './routes/listing.route.js'
 
 //dotenv configuration before use
 
@@ -34,7 +35,7 @@ app.listen(3000, () => {
 
 app.use("/backend/user", userRoute);
 app.use("/backend/auth", authRouter);
-
+app.use("/backend/listing", listingRouter);
 //middleware
 
 app.use((err, req, res, next) => {
